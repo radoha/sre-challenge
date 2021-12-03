@@ -11,8 +11,12 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
+    container: gradle:jdk11-slim
     steps:
     - uses: actions/checkout@v2
-    - name: Build the Docker image
-      run: docker build . --file back-app.Dockerfile --tag my-image-name:$(date +%s)
+
+    - name: Gradle Build
+      run: ./gradlew clean build --info
+    
+    - name: list dir 
+      run: ls -laR
