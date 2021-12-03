@@ -6,7 +6,7 @@ COPY . /home/app
 WORKDIR /home/app
  
 # build application 
-RUN ./gradlew clean build
+RUN ./gradlew clean build --info --stacktrace
  
 # the second stage of our build will use open jdk 8 on alpine 3.9
 FROM openjdk:11-jre-slim-buster
