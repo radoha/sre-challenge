@@ -20,6 +20,9 @@ jobs:
     - name: Gradle build all apps
       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
 
+    - name: List Dir
+      run: ls -laR
+
     - name: Upload Artifact - JAR for app Back
       env:
         APP_NAME: back
