@@ -5,7 +5,5 @@ COPY --chown=gradle:gradle . /home/app
 
 WORKDIR /home/app
 
-RUN ls -la
-
 # build application 
-RUN $PWD/gradlew clean build --info --stacktrace
+RUN ./gradlew clean build
