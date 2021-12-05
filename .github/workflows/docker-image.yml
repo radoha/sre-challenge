@@ -2,9 +2,12 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ start ]
+    branches: [ gha ]
   pull_request:
-    branches: [ start ]
+    branches: [ gha ]
+
+env:
+  APP_VERSION: 0.1.0
 
 jobs:
 
@@ -14,5 +17,35 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Build the Docker image
-      run: docker build . --file back-app.Dockerfile --tag my-image-name:$(date +%s)
+    - name: Gradle build all apps
+      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+
+    - name: Upload Artifact - JAR for app Back
+      env:
+        APP_NAME: back
+      uses: actions/upload-artifact@v2
+      with:
+        name: sre-challenge-apps
+        path: app/$APP_NAME/build/libs/$APP_NAME-$APP_VERSION.jar
+        retention-days: 10
+        if-no-files-found: error
+
+    - name: Upload Artifact - JAR for app Front
+      env:
+        APP_NAME: front
+      uses: actions/upload-artifact@v2
+      with:
+        name: sre-challenge-apps
+        path: app/$APP_NAME/build/libs/$APP_NAME-$APP_VERSION.jar
+        retention-days: 10
+        if-no-files-found: error
+
+    - name: Upload Artifact - JAR for app Reader
+      env:
+        APP_NAME: reader
+      uses: actions/upload-artifact@v2
+      with:
+        name: sre-challenge-apps
+        path: app/$APP_NAME/build/libs/$APP_NAME-$APP_VERSION.jar
+        retention-days: 10
+        if-no-files-found: error
