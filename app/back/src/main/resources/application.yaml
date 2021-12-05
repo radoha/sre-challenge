@@ -2,14 +2,14 @@ server:
   port: 8080
 spring:
   kafka:
-    bootstrap-servers: "sre-challenge-kafka-headless.kafka:9092"
+    bootstrap-servers: "sre-challenge-kafka.kafka.svc.cluster.local:9092"
     consumer:
       group-id: "back-group-local"
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
       properties.spring.json.trusted.packages: "*"
 
-  datasource.url: jdbc:postgresql://sre-challenge-pg-headless:5432/sre_challenge
+  datasource.url: jdbc:postgresql://sre-challenge-pg.postgres.svc.cluster.local:5432/sre_challenge
   datasource.username: db_user
   datasource.password: password123
   datasource.driverClassName: org.postgresql.Driver

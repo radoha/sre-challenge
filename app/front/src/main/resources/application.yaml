@@ -2,7 +2,7 @@ server:
   port: 8080
 spring:
   kafka:
-    bootstrap-servers: "sre-challenge-kafka-headless.kafka:9092"
+    bootstrap-servers: "sre-challenge-kafka.kafka.svc.cluster.local:9092"
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
