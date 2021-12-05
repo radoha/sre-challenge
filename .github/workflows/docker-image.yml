@@ -14,8 +14,6 @@ jobs:
     container: gradle:jdk11-slim
     steps:
     - uses: actions/checkout@v2
-      with:
-        ref: start
 
     - name: Gradle Build
       run: ./gradlew clean build --info
