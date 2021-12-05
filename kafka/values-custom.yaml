@@ -1,0 +1,9 @@
+nameOverride: sre-challenge-kafka
+
+fullnameOverride: sre-challenge-kafka
+
+commonLabels:
+  app: sre-challenge
+
+# numPartitions: 1
+# defaultReplicationFactor: 1  

@@ -1,0 +1,13 @@
+nameOverride: sre-challenge-pg
+
+fullnameOverride: sre-challenge-pg
+
+commonLabels:
+  app: sre-challenge
+
+image:
+  tag: 11.5.0-debian-9-r90
+
+postgresqlDatabase: sre_challenge
+postgresqlUsername: db_user
+postgresqlPassword: password123
