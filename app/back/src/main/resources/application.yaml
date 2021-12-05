@@ -9,7 +9,7 @@ spring:
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
       properties.spring.json.trusted.packages: "*"
 
-  datasource.url: jdbc:postgresql://localhost:5432/sre_challenge
+  datasource.url: jdbc:postgresql://sre-challenge-pg-headless:5432/sre_challenge
   datasource.username: db_user
   datasource.password: password123
   datasource.driverClassName: org.postgresql.Driver
