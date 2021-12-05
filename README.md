@@ -1,8 +1,20 @@
 # SRE Coding Challenge
 
-You are tasked with deploying a solution to Kubernetes cluster. You may use Minikube, Microk8s, k3s or any other Kubernetes distribution  
-Solution consists of 3 SpringBoot applications, Kafka deployment to support messaging and PostgreSQL database to provide persistence layer.
-Application deployment should use helm (https://helm.sh/), Kafka and Postgres may be deployed with any technology you like.
+You are tasked with deploying a solution to Kubernetes cluster. 
+
+You may use Minikube, Microk8s, k3s or any other Kubernetes distribution  
+
+Solution consists of:
+- 3 SpringBoot applications
+    - ⭐ Back
+    - ⭐ Front
+    - ⭐ Reader
+- ⭐ Kafka deployment to support messaging
+- ✅ PostgreSQL database to provide persistence layer.
+  
+> Application deployment should use helm (https://helm.sh/)
+
+> Kafka and Postgres may be deployed with any technology you like.
 
 We do not expect too much automation (few bash scripts should work just fine). In case you prefer to automate everything, 
 you may use any flavour of automation tools, Ansible, Terraform - everything will work, You may even setup CI/CD flow using Jenkins/Tekton/Drone/etc. ;)
@@ -17,15 +29,15 @@ you may use any flavour of automation tools, Ansible, Terraform - everything wil
 
 ## Kafka Topic specs
 
-- name: testCommand
-- partitions: 32
-- replication-factor: 1
+- ⭐ name: testCommand
+- ⭐ partitions: 32
+- ⭐ replication-factor: 1
 
 ## Database
 
-Application developed with PostgreSQL 11.5
+✅ Application developed with PostgreSQL 11.5
 
-Database schema created with Back application first run
+⭐ Database schema created with Back application first run
 
 ## Applications
 
