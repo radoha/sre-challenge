@@ -6,11 +6,11 @@ You may use Minikube, Microk8s, k3s or any other Kubernetes distribution
 
 Solution consists of:
 - 3 SpringBoot applications
-    - ⭐ Back
-    - ⭐ Front
-    - ⭐ Reader
-- ⭐ Kafka deployment to support messaging
-- ✅ PostgreSQL database to provide persistence layer.
+    - ✅ Back
+    - ✅ Front
+    - ✅ Reader
+- ✅ Kafka deployment to support messaging -> Helm Chart by Bitnami
+- ✅ PostgreSQL database to provide persistence layer -> Helm Chart by Bitnami
   
 > Application deployment should use helm (https://helm.sh/)
 
@@ -18,6 +18,8 @@ Solution consists of:
 
 We do not expect too much automation (few bash scripts should work just fine). In case you prefer to automate everything, 
 you may use any flavour of automation tools, Ansible, Terraform - everything will work, You may even setup CI/CD flow using Jenkins/Tekton/Drone/etc. ;)
+
+❌ No automation done at this moment - only natural language with command lines provided in [BUILD&DEPLOY.md](BUILD&DEPLOY.md) file.
 
 ## Overall architecture
 
@@ -29,15 +31,15 @@ you may use any flavour of automation tools, Ansible, Terraform - everything wil
 
 ## Kafka Topic specs
 
-- ⭐ name: testCommand
-- ⭐ partitions: 32
-- ⭐ replication-factor: 1
+- ✅ name: testCommand
+- ✅ partitions: 32
+- ✅ replication-factor: 1
 
 ## Database
 
 ✅ Application developed with PostgreSQL 11.5
 
-⭐ Database schema created with Back application first run
+✅ Database schema created with Back application first run
 
 ## Applications
 
@@ -46,6 +48,8 @@ you may use any flavour of automation tools, Ansible, Terraform - everything wil
 You need Java 11+ installed, then run
 
 `./gradlew clean build`
+
+⭐ Build stage solved inside Gradle Build Docker image 
 
 to build applications. Jar files will land in `app/back/build/libs/back-0.1.0.jar` (Back app for instance)
 
