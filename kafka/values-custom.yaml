@@ -5,5 +5,5 @@ fullnameOverride: sre-challenge-kafka
 commonLabels:
   app: sre-challenge
 
-# numPartitions: 1
-# defaultReplicationFactor: 1  
+numPartitions: 32
+defaultReplicationFactor: 1  
