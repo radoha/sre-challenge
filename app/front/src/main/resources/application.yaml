@@ -14,7 +14,7 @@ management:
     port: 8081
     address: 0.0.0.0
   endpoints:
-    enabled-by-default: false
+    enabled-by-default: true
     web:
       base-path: /
       exposure:

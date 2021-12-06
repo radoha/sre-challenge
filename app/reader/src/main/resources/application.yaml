@@ -1,5 +1,5 @@
 server:
-  port: 8084
+  port: 8080
 spring:
   datasource.url: jdbc:postgresql://sre-challenge-pg.postgres.svc.cluster.local:5432/sre_challenge
   datasource.username: db_user
